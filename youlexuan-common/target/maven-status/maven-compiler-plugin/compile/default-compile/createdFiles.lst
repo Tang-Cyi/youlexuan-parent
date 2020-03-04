@@ -1,0 +1,6 @@
+com\offcn\util\IdWorker.class
+com\offcn\util\SendSmsUtils.class
+com\offcn\util\CookieUtil.class
+com\offcn\util\SerializeUtils.class
+com\li\util\PhoneFormatCheckUtils.class
+com\offcn\util\FastDFSClient.class

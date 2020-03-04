@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+     http://www.springframework.org/schema/rabbit
+     http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+
+
+    <!-- 配置rabbitmq服务信息 -->
+    <rabbit:connection-factory id="connectionFactory"
+                               username="admin" password="admin"
+                               host="192.168.188.146" port="5672"/>
+
+    <!--模板工具类对象 定义rabbit template用于消息的接收和发送 -->
+    <!--exchange="exchangeTest"交换器名称-->
+    <rabbit:template id="amqpTemplate"
+                     connection-factory="connectionFactory"
+                     exchange="exchangeTest"/>
+
+    <rabbit:admin connection-factory="connectionFactory"/>
+
+    <!--定义名称为queueTest的队列 队列名称-->
+
+    <!--多个消息队列 -->
+    <rabbit:queue name="pageQueue" />
+    <!--<rabbit:queue name="searchQueue" />-->
+
+
+
+    <!--指定队列的订阅端（消息接收端）-->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <!--queues="queueTest" 队列的名称-->
+        <!--ref="messageReceiver" 指的是这个消息接收者messageReceiver 要监听队列queueTest的消息-->
+        <rabbit:listener queues="pageQueue" ref="pageQueuemessageReceiver" />
+        <!--<rabbit:listener queues="queueTest,queueTest1" ref="messageReceiver" />-->
+    </rabbit:listener-container>
+
+     <!--消息接收者-->
+    <bean id="pageQueuemessageReceiver" class="com.offcn.consumer.PageQueuemessageReceiver" />
+
+</beans>
+

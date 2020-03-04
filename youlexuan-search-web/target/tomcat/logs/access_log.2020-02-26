@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:49:38 +0800] "GET /search.html HTTP/1.1" 200 34682 http-bio-9104-exec-1 112
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:49:38 +0800] "GET /js/base.js HTTP/1.1" 304 - http-bio-9104-exec-3 21
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:49:38 +0800] "GET /js/service/searchService.js HTTP/1.1" 304 - http-bio-9104-exec-2 23
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:49:38 +0800] "GET /js/controller/searchController.js HTTP/1.1" 304 - http-bio-9104-exec-4 24
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:49:39 +0800] "GET /assets/img/favicon.ico HTTP/1.1" 404 995 http-bio-9104-exec-6 5
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:49:59 +0800] "POST /itemsearch/search.do HTTP/1.1" 200 3396 http-bio-9104-exec-7 20374
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:51:44 +0800] "GET /success-cart.html HTTP/1.1" 404 985 http-bio-9104-exec-10 2
+0:0:0:0:0:0:0:1 - - [26/Feb/2020:21:51:45 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9104-exec-10 3
